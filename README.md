@@ -1,85 +1,128 @@
-Recurring Date Picker Component
-This is a reusable recurring date picker component built with Next.js and Tailwind CSS, similar to the feature found in productivity apps like TickTick. It allows users to select complex recurrence patterns for events or tasks.
 
-This project was built as a solution to a front-end assignment.
+# 🗓️ Recurring Date Picker Component
 
-Features
-Multiple Recurrence Options: Select from Daily, Weekly, Monthly, or Yearly recurrence.
+A **reusable and highly customizable recurring date picker** built with **Next.js** and **Tailwind CSS**. Designed to mimic the powerful recurrence logic of apps like **TickTick**, this component offers a user-friendly interface for creating complex scheduling patterns.
 
-Flexible Interval Control: Set events to recur every "X" days, weeks, months, or years.
+This project was developed as a solution for a front-end engineering assignment, showcasing modular design, dynamic interactivity, and clean code structure.
 
-Advanced Weekly Selection: Choose specific days of the week for an event to repeat on.
+---
 
-Complex Monthly Patterns:
+## ✨ Features
 
-Repeat on a specific day of the month (e.g., the 15th).
+✅ **Multiple Recurrence Options**
+- Daily  
+- Weekly  
+- Monthly  
+- Yearly  
 
-Repeat on a specific day of a specific week (e.g., the second Tuesday of every month).
+✅ **Flexible Interval Control**
+- Set events to repeat every _X_ days, weeks, months, or years.
 
-Date Range Selection:
+✅ **Advanced Weekly Selection**
+- Select specific weekdays for repeating events.
 
-A required Start Date for the recurrence to begin.
+✅ **Complex Monthly Patterns**
+- Repeat on a specific **day of the month** (e.g., 15th).
+- Repeat on a **weekday of a specific week** (e.g., second Tuesday of every month).
 
-An optional End Date for when the recurrence should stop.
+✅ **Date Range Selection**
+- Choose a **start date** (required).
+- Choose an **end date** (optional).
 
-Live Calendar Preview: An interactive mini-calendar on the right-hand side visually displays all the calculated recurring dates, updating in real-time as options are changed.
+✅ **Live Calendar Preview**
+- Automatically shows selected recurrence dates in a **mini calendar view** as options are changed.
 
-Tech Stack
-Framework: Next.js (React)
+---
 
-Styling: Tailwind CSS
+## 🛠️ Tech Stack
 
-State Management: React Context API
+- **Framework**: [Next.js](https://nextjs.org/) (React)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **State Management**: React Context API
+- **Testing**: Jest, React Testing Library, @testing-library/user-event
 
-Testing: Jest, React Testing Library, and User Event
+---
 
-Project Structure
-The project is organized into a clean and maintainable structure to promote separation of concerns.
+## 🧪 Testing
 
+This project includes **unit tests** for core logic and **integration tests** for UI flows.
+
+To run all tests:
+
+```bash
+npm test
+```
+
+Jest will run in watch mode and re-run relevant tests automatically when you update code.
+
+---
+
+## 📁 Project Structure
+
+```
 recurring-date-picker/
-├── __tests__/              # Contains all unit and integration tests.
-│   ├── dateLogic.test.js
-│   └── HomePage.test.js
+├── __tests__/
+│   ├── dateLogic.test.js       # Unit tests for the core logic
+│   └── HomePage.test.js        # Integration test for the main page
+│
 ├── app/
-│   ├── components/         # Reusable UI components.
-│   ├── context/            # React Context for global state management.
-│   ├── lib/                # Core, testable business logic (date calculations).
+│   ├── components/
+│   │   ├── DateRangeSelector.js
+│   │   ├── IntervalInput.js
+│   │   ├── MiniCalendarPreview.js
+│   │   ├── MonthlyOptions.js
+│   │   ├── RecurrenceTypeSelector.js
+│   │   └── WeeklyOptions.js
+│   │
+│   ├── context/
+│   │   └── DatePickerContext.js    # State management for the component
+│   │
 │   ├── globals.css
 │   ├── layout.js
-│   └── page.js             # The main entry point page for the application.
-├── jest.config.js          # Jest configuration.
+│   └── page.js                 # The main page that assembles the components
+│
+├── lib/
+│   └── dateLogic.js            # The extracted, testable date calculation logic
+│
+├── node_modules/
+├── public/
+│   ├── next.svg
+│   └── vercel.svg
+│
+├── .gitignore
+├── jest.config.js              # Jest configuration file
+├── jest.setup.js               # Jest setup file
+├── next.config.js
 ├── package.json
-└── README.md
+├── package-lock.json
+├── postcss.config.js
+└── tailwind.config.js
+```
 
-Getting Started
-Follow these instructions to get the project up and running on your local machine.
+---
 
-Prerequisites
-You need to have Node.js (version 18.x or later) and npm installed on your computer.
+## 🚀 Getting Started
 
-Installation
-Clone the repository to your local machine:
-
-git clone <your-repository-url>
-
-Navigate into the project directory:
-
-cd recurring-date-picker
-
-Install all the required dependencies:
-
+```bash
+git clone https://github.com/techops-chirag/Recurring-date-picker.git
+cd Recurring-date-picker
 npm install
-
-Running the Development Server
-Once the installation is complete, you can run the application in development mode:
-
 npm run dev
+```
 
-Open http://localhost:3000 with your browser to see the result.
+Visit `http://localhost:3000` to view the app locally.
 
-Running Tests
-This project includes both unit tests for the core logic and an integration test for the UI components. To run the test suite, execute the following command in your terminal:
+---
 
-npm test
+## 📄 License
 
-This will run Jest in watch mode, automatically re-running tests when you make changes to the files.
+This project is for demonstration and educational purposes. All rights reserved to the author.
+
+---
+
+## 🙋‍♂️ Author
+
+**Chirag Saini**  
+💼 [LinkedIn](https://www.linkedin.com/in/chiraggs)  
+📧 chirag111saini@gmail.com  
+🌐 [GitHub](https://github.com/techops-chirag)
