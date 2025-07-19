@@ -13,13 +13,10 @@ const MonthlyOptions = () => {
         setMonthlyDay(parseInt(e.target.value) || 1);
     };
 
-    // FIX: Added UI improvements for better spacing, alignment, and modern dropdowns.
     return (
         <div className="space-y-4">
             <IntervalInput label="month(s)" />
-            {/* Group the radio options together for better visual hierarchy */}
             <div className="bg-gray-100 p-3 rounded-lg space-y-3">
-                {/* Option 1: On a specific day of the month */}
                 <div className="flex items-center">
                     <input type="radio" id="dayOfMonth" name="monthlyOption" value="dayOfMonth" checked={monthlyOption === 'dayOfMonth'} onChange={() => setMonthlyOption('dayOfMonth')} className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"/>
                     <label htmlFor="dayOfMonth" className="ml-3 block text-sm text-gray-700 w-20">On day</label>
@@ -31,14 +28,13 @@ const MonthlyOptions = () => {
                         onChange={handleDayChange} 
                         className="w-20 p-1 border border-gray-300 rounded-md text-center text-gray-900 disabled:bg-gray-200 disabled:text-gray-500" 
                         disabled={monthlyOption !== 'dayOfMonth'}
+                        // FIX: Add a data-testid for easy selection in tests.
+                        data-testid="monthly-day-input"
                     />
                 </div>
-
-                {/* Option 2: On a specific day of the week in a specific week */}
                 <div className="flex items-center">
                     <input type="radio" id="dayOfWeek" name="monthlyOption" value="dayOfWeek" checked={monthlyOption === 'dayOfWeek'} onChange={() => setMonthlyOption('dayOfWeek')} className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"/>
                     <label htmlFor="dayOfWeek" className="ml-3 block text-sm text-gray-700 w-20">On the</label>
-                    {/* Custom styled select dropdowns */}
                     <div className="flex items-center space-x-2">
                         <div className="relative">
                             <select value={monthlyWeek} onChange={e => setMonthlyWeek(parseInt(e.target.value))} className="appearance-none w-full bg-white border border-gray-300 text-gray-900 py-1 pl-3 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white focus:border-blue-500 disabled:bg-gray-200 disabled:text-gray-500" disabled={monthlyOption !== 'dayOfWeek'}>
